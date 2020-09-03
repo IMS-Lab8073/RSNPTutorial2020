@@ -53,6 +53,8 @@ E-mail:md20024@shibaura-it.ac.jp
 汎用ユニット(以下，「RSNPユニット」と記載)を，多種多様なロボットやデバイスに外付けで接続することで，取得したデータをRSNP(Robot Serivice Networking Protocol)[2]通信でインターネット経由でサーバにアップロードして蓄積し，Webブラウザ等のGUI上で各ロボットの状態を管理，監視することができる．以下の図のようにRSNPユニットをロボットやデバイスに接続して使用することが可能である．  
 <img src="images/AboutRSNP.png" width=60%>  
 
+![](images/AboutRSNP.png)
+
 **※現状，RSNPユニットは，産業技術大学院大学(品川)サーバの次のエンドポイントへ接続します．**  
 http://robots.aiit.ac.jp:8080/EnqueteRobots2017/services  
   
