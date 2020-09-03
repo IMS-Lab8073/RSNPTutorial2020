@@ -4,7 +4,7 @@
 本システムをご利用予定の方は，お手数ですが下記の連絡先までご連絡ください．また，改善点などのご意見がある方も，下記の連絡先までご連絡ください．**RSNP(Robot Service Network Protocol)をご利用いただくには，使用条件にご同意していただき，RSi事務局にお問い合わせしていただく必要がありますので，ご注意ください．** RSiとRSNPに関しては以下のURLでご参照ください．RSNPユニットのハードウェア，ソフトウェアの仕様に関しては，以下のURLをご参照ください．各種修正履歴に関しては以下のURLをご参照ください．  
 
 [RSiとRSNPに関して](http://robotservices.org/)  
-[RSNPユニットの仕様](https://github.com/SatoshiOkano/RSNPUnit/blob/master/Specification.md)  
+[RSNPユニットの仕様](https://ims-lab8073.github.io/RSNPTutorial2020/Specification.html)  
 
 ~~~text  
 連絡先：  
@@ -51,8 +51,7 @@ E-mail:md20024@shibaura-it.ac.jp
 
 汎用ユニット(以下，「RSNPユニット」と記載)を，多種多様なロボットやデバイスに外付けで接続することで，取得したデータをRSNP(Robot Serivice Networking Protocol)[2]通信でインターネット経由でサーバにアップロードして蓄積し，Webブラウザ等のGUI上で各ロボットの状態を管理，監視することができる．以下の図のようにRSNPユニットをロボットやデバイスに接続して使用することが可能である．  
 
-<img src="https://raw.githubusercontent.com/IMS-Lab8073/RSNPTutorial2020/master/docs/images/AboutRSNP.png" width=60%>  
-<img src="images/AboutRSNP.png" width=60%>  
+![](./images/AboutRSNP.png)
 
 **※現状，RSNPユニットは，次のエンドポイントへ接続します．**  
 http://robo-lab.mydns.jp:8080/EnqueteRobots2017/services  
@@ -65,8 +64,7 @@ http://robo-lab.mydns.jp:8080/EnqueteRobots2017/services
 
 まず，RSNPユニットの電源を入れます．電源ボタンは搭載していないため以下の図に示すように，microUSBにusbケーブルを接続します．OSをシャットダウンしたら，ケーブルを抜いてください．  
 
-<img src="https://github.com/IMS-Lab8073/RSNPTutorial2020/blob/master/docs/images/UnitmicroUSB.png?raw=true" width=60%>  
-
+![](./images/UnitmicroUSB.png)
 
 <div style="page-break-before:always"></div>  
 
@@ -74,8 +72,7 @@ http://robo-lab.mydns.jp:8080/EnqueteRobots2017/services
 
 HDMI接続可能なモニタ，USBtype-Aのキーボード，マウスを用意可能である場合は，下の図のように接続することで，PCのように扱うことが可能です．ただし，環境が初めから整っている場合を以外は，次の2.3節に従って接続することも可能です．  
 
-<img src="https://github.com/IMS-Lab8073/RSNPTutorial2020/blob/master/docs/images/UnitMonitorKeyboard.png?raw=true" width=60%>  
-
+![](./images/UnitMonitorKeyboard.png)
 
 ### 2.3 RSNPユニットとPCとの接続  
 
@@ -85,16 +82,15 @@ RSNPユニットの初期設定を行うために，PCと有線で接続しま�
 **LANケーブルとの接続**  
 LANケーブルでPCに接続するために，以下の図に示すように配線します．ケーブルの種類は，クロスかストレートのどちらでも接続可能です． PCとの接続には，LANからUSB-typeA変換ハブ，LANからUSB-typeC変換ハブを使用すれば，PCにLANポート(Ethernetポート)が無くても，接続可能です．  
 
-<img src="https://github.com/IMS-Lab8073/RSNPTutorial2020/blob/master/docs/images/UnitLAN1.png?raw=true" width=45%>  
-
+![](./images/UnitLAN1.png)  
 
 LANポート同士で接続した場合  
 
-<img src="https://github.com/IMS-Lab8073/RSNPTutorial2020/blob/master/docs/images/UnitLAN2.png?raw=true" width=45%>  
+![](./images/UnitLAN2.png)  
 
 USB-typeAに接続した場合  
 
-<img src="https://github.com/IMS-Lab8073/RSNPTutorial2020/blob/master/docs/images/UnitLAN3.png?raw=true" width=45%>  
+![](./images/UnitLAN3.png)  
 
 USB-typeCに接続した場合  
 
@@ -124,7 +120,7 @@ https://forest.watch.impress.co.jp/library/software/utf8teraterm/
 
 以下のような画面が表示されます．  
 
-<img src="https://github.com/IMS-Lab8073/RSNPTutorial2020/blob/master/docs/images/Teraterm1.png?raw=true" width=45%>  
+![](./images/Teraterm1.png)
 
 ここで，ホストに"rsnpunit.local"と，TCPポートに"22"と入力し，"OK"をクリックします．  
 
@@ -132,7 +128,8 @@ https://forest.watch.impress.co.jp/library/software/utf8teraterm/
 
 次にRaspberry Piにログインをします．  
 上記で"OK"をクリック後に以下のような画面が表示されます．  
-<img src="https://github.com/IMS-Lab8073/RSNPTutorial2020/blob/master/docs/images/Teraterm2.png?raw=true" width=45%>  
+
+![](./images/Teraterm2.png)
 
 ユーザ名に"pi"と，パスフレーズに"8073"と入力し，"OK"をクリックします．  
 
@@ -142,7 +139,7 @@ https://forest.watch.impress.co.jp/library/software/utf8teraterm/
 
 RSNPユニットに接続すると以下のような画面が表示されます．  
 
-<img src="https://github.com/IMS-Lab8073/RSNPTutorial2020/blob/master/docs/images/Teraterm3.png?raw=true" width=45%>  
+![](./images/Teraterm3.png)
 
 ### 2.5 無線LAN接続設定  
 
@@ -249,7 +246,7 @@ http://robo-lab.mydns.jp:8080/Robomech2019/
 今回は，単にRaspberryPiの稼働状況と，それに接続されたセンサの状態を表示する一例となっています．
 
 "robot_id"=1のロボットで"result"="test_string"を送信した例を下の図に示す．  
-<img src="https://user-images.githubusercontent.com/44587055/68925161-ce574900-07c5-11ea-93fb-5263e5ad1dc5.png" width=60%>  
+![](./images/demoImage.png)  
 
 他にもロボットの画像に差し替えたり，表示するデータの種類も変更して表示情報を変更することができます．  
 
