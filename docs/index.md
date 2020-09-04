@@ -99,7 +99,9 @@ USB-typeCに接続した場合
 #### ケース1-Linux，Mac OSの場合  
 
 Linuxを使用している場合，次のコマンドを実行することで，RSNPユニットに接続することができます．  
-`~$ ssh pi@rsnpunit.local -p 22`  
+```shell
+~$ ssh pi@rsnpunit.local -p 22
+```
 
 #### ケース2-Windowsの場合
 
@@ -110,7 +112,7 @@ RSNPユニットにリモートでSSH接続するためのソフトウェアが�
   
 以下のサイトより，ダウンロードとインストールを行ってください．  
 **窓の杜 Tera Term**  
-https://forest.watch.impress.co.jp/library/software/utf8teraterm/  
+[https://forest.watch.impress.co.jp/library/software/utf8teraterm/](https://forest.watch.impress.co.jp/library/software/utf8teraterm/)  
 
 <div style="page-break-before:always"></div>  
 
@@ -146,7 +148,10 @@ RSNPユニットに接続すると以下のような画面が表示されます�
 RSNPユニットに対して，ロボットやデバイスを接続する場合，有線LANで接続します．しかし，RSNP通信自体は現状，無線LANを使用することを前提としています(1. はじめに 図を参照)．そこで，ここでは無線LANの接続設定を行います．  
 まず，接続するルータ等のSSIDとパスワードを調べます．  
 次に，`wpa_supplicant.conf`ファイルをエディタで編集します．  
-`~$ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`  
+
+```shell
+~$ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+```
 
 ※ファイルを編集するためのエディタとして今回は"nano"を使用していますが，好みのものを使用してください．以下，"nano"を使用します．
 
@@ -160,18 +165,32 @@ network={
 ~~~
 
 次に，RSNPユニットの無線LANを再起動します．以下のようにコマンドを入力し実行します．  
-`~$ sudo ifdown wlan0`  
+```shell
+~$ sudo ifdown wlan0
+```
+
 数秒すると無線LANはオフになるので，以下のようにコマンドを入力し実行します．  
-`~$ sudo ifup wlan0`  
+```shell
+~$ sudo ifup wlan0
+```
+
 接続されたか確認のため，以下のようにコマンドを入力し実行します．  
-`~$ ifconfig`  
+```shell
+~$ ifconfig
+```
+
 `wlan0:`という項目の`inet`の行に数字の羅列が載っていれば，接続されています．
 数字が無い場合は，再度，SSID，パスワードの確認し，RSNPユニットの再起動をしてください．  
 
-再起動のコマンドは，以下のとおりです．
-`~$ sudo reboot`
+再起動のコマンドは，以下のとおりです．  
+```shell
+~$ sudo reboot
+```
+
 なお，シャットダウンのコマンドは，以下のとおりです．  
-`~$ sudo poweroff`
+```shell
+~$ sudo poweroff
+```
 
 以上で，無線LANの設定は終了になります．  
 
@@ -181,19 +200,23 @@ network={
 
 前節でダウンロードした`"DataLog"`ディレクトリに移動します．  
 以下のようにコマンドを入力し実行します．  
-`~$ cd ~/RSNPUnit/DataLog/`  
+```shell
+~$ cd ~/RSNPUnit/DataLog/
+```
 
 移動すると，`"Config.properties"`というファイルがあります．  
 次に，以下のようにコマンドを入力します．  
-`~$ sudo nano Config.properties`  
 
+```shell
+~$ sudo nano Config.properties
+```
 デフォルトでは，以下のように記述されています．  
 
 ~~~text
-Configuretion
-robot_id  = 1  
-robot_pw  = 8073  
-end_point = http://robots.aiit.ac.jp:8080/UpdateNotificationState/services
+Configuration
+robot_id  = 2
+robot_pw = 8073
+end_point = http://robo-lab.mydns.jp:8080/EnqueteRobots2017/services
 send_interval = 10000
 ip_address = 127.0.0.1
 port = 8000
@@ -217,22 +240,43 @@ port = 8000
 プログラムを起動してから，接続する必要があるので注意してください．  
 
 ### 3.1 RSNP通信プログラムの実行  
-
 まず，`"RSNPNotifi.jar"`を実行します．  
-`~$ cd`でホームディレクトリに移動します．  
 `RSNPUnit`ディレクトリに移動するため，以下のようにコマンドを入力します．  
-`~$ cd ~/RSNPUnit/`  
-※RSNPUnitSystemDirの場所によって異なるので注意してください．
+
+```shell
+~$ cd ~/RSNPUnit
+```
 
 次に，実行するために以下のようにコマンドを入力します．  
-`~$ java -jar RSNPNotifi.jar`  
+```shell
+~$ java -jar RSNPNotifi.jar
+```
 ※現状，jdk1.8以下で動作します．jdk10以上では動作しませんのでご注意ください．  
 
 停止するときは，"Ctrl"+"c"キーを入力することで停止します．  
 
 ### 3.2 RSNPユニットに接続する
+RSNPNotifi.jarに接続するサンプルのPythonプログラムがあります．
+新しい接続画面を開いてください．(2.4 RSNPユニットに接続する 参照)
 
+まず，Pythonファイルのある場所に移動します．
 
+```shell
+~$ cd ~/RSNPUnit/ConnectorSample
+```
+
+その後，Pythonファイルを実行します．
+
+```shell
+~$ python Socket_sample.py
+```
+
+`Input data and enter`と出てくるので好きな文字を入力してEnterを押します．
+```shell
+~$ Input data and enter
+~$ RSNPチュートリアル(入力)
+~$ send data : {"data":[{"ac_id":"1","ac":"robot_state","re_id":"1","re":"RSNPチュートリアル","co":""}]}
+```
 
 ### 3.3 状態の確認  
 
@@ -240,7 +284,7 @@ port = 8000
 サーバにアクセスすることでWebブラウザ上に状態が反映されているか確認することができます．  
 
 デフォルト設定のままの場合，以下のURLにアクセスすることで確認することができます．  
-http://robo-lab.mydns.jp:8080/Robomech2019/
+[http://robo-lab.mydns.jp:8080/Robomech2019/](http://robo-lab.mydns.jp:8080/Robomech2019/)
 
 以下のようにブラウザ上で表示されていれば，確認完了です．  
 今回は，単にRaspberryPiの稼働状況と，それに接続されたセンサの状態を表示する一例となっています．
