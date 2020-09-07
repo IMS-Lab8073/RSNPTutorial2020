@@ -6,6 +6,8 @@
 [RSiとRSNPに関して](http://robotservices.org/)  
 [RSNPユニットの仕様](https://ims-lab8073.github.io/RSNPTutorial2020/Specification.html)  
 
+[メインページ](https://ims-lab8073.github.io/RSNPTutorial2020/)
+
 ~~~text  
 連絡先：  
 芝浦工業大学 機械機能工学科 知能機械システム研究室  
