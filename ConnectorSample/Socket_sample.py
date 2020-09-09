@@ -37,12 +37,11 @@ def main():
 
     while True:
         # input data
-        print("Input data and enter")
-        result_data = input()
+        print()
+        result_data = input("Input data and enter : ")
 
         # set result data
         send_data["data"][0]["re"] = result_data
-        print(send_data["data"][0]["re"])
 
         # to bytes
         send_data_byte = bytes(json.dumps(send_data).encode())

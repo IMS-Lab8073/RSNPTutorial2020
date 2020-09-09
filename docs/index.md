@@ -139,9 +139,3 @@ RSNPユニットからロボットまたはデバイス間のデータのやり�
 データが複数種類の場合は，配列の成分が増加し，  
 ``{"data":[{...},{...},{...},...]}``  
 となります．今回は5種類まで対応しています．  
-
-## 参考文献  
-[1] NEDO "2035年までのロボット産業の将来市場予測"，http://www.nedo.go.jp/content/100080673.pdf, 最終閲覧日2019年8月20日  
-[2] ロボットサービスイニシアチブ，Robot Service Network Protocol2.3 仕様書 第1.0版，2010  
-[3] OpenRTM-aist, https://openrtm.org/openrtm/ja, 最終閲覧日2019年8月20日  
-[4] ROS Wiki, http://wiki.ros.org/ja, 最終閲覧日2019年8月20日  
