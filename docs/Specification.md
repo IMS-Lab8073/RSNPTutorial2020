@@ -12,7 +12,7 @@
 芝浦工業大学 機械機能工学科 知能機械システム研究室  
 〒135-8548 東京都江東区豊洲3-7-5  
 機械工学専攻 修士1年 加藤宏一朗 Koichiro Kato  
-E-mail:md18020@shibaura-it.ac.jp  
+E-mail:md20024@shibaura-it.ac.jp  
 ~~~  
 
 <div style="page-break-before:always"></div>
