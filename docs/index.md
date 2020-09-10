@@ -67,7 +67,7 @@ RSNPNotifi.jarに接続するサンプルのPythonプログラムがあります
 サーバにアクセスすることでWebブラウザ上に状態が反映されているか確認することができます．  
 
 デフォルト設定のままの場合，以下のURLにアクセスすることで確認することができます．  
-[http://robo-lab.mydns.jp:8080/Robomech2019/](http://robo-lab.mydns.jp:8080/Robomech2019/)
+[http://robo-lab.mydns.jp:8080/RSNPTutorial2020/](http://robo-lab.mydns.jp:8080/RSNPTutorial2020/)
 
 以下のようにブラウザ上で表示されていれば，確認完了です．  
 今回は，単にRaspberryPiの稼働状況と，それに接続されたセンサの状態を表示する一例となっています．
