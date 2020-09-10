@@ -17,30 +17,13 @@ E-mail:md18020@shibaura-it.ac.jp
 
 <div style="page-break-before:always"></div>
 
-<h2>目次</h2>
-<!-- TOC -->
-
-- [はじめに](#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)
-- [RSNPユニットハードウェア仕様](#rsnp%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2%E4%BB%95%E6%A7%98)
-        - [ケース装着時](#%E3%82%B1%E3%83%BC%E3%82%B9%E8%A3%85%E7%9D%80%E6%99%82)
-        - [バッテリ仕様](#%E3%83%90%E3%83%83%E3%83%86%E3%83%AA%E4%BB%95%E6%A7%98)
-        - [RaspberryPi 3 Model B RSコンポーネンツ製](#raspberrypi-3-model-b-rs%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%84%E8%A3%BD)
-- [RSNPユニットソフトウェア仕様](#rsnp%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E4%BB%95%E6%A7%98)
-- [サーバ仕様](#%E3%82%B5%E3%83%BC%E3%83%90%E4%BB%95%E6%A7%98)
-- [RSNPでの送信データ仕様](#rsnp%E3%81%A7%E3%81%AE%E9%80%81%E4%BF%A1%E3%83%87%E3%83%BC%E3%82%BF%E4%BB%95%E6%A7%98)
-- [RSNPユニットへの送信データ仕様](#rsnp%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%81%B8%E3%81%AE%E9%80%81%E4%BF%A1%E3%83%87%E3%83%BC%E3%82%BF%E4%BB%95%E6%A7%98)
-- [使用ソフトウェア及び入手方法，参考資料](#%E4%BD%BF%E7%94%A8%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E5%8F%8A%E3%81%B3%E5%85%A5%E6%89%8B%E6%96%B9%E6%B3%95%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99)
-- [参考文献](#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE)
-
-<!-- /TOC -->
-
 ## 1. はじめに  
 
 近年，労働人口の減少等から，その補完としてロボットの活用が期待されている．平成22年に発表されたNEDOの資料[1]では，ロボット市場の拡大がされている．ゆえに，今後，ロボットの台数が増加するのも必然である．そこで，増加した多数のロボットを管理，監視するためのシステムが必要になってくる．また，各ロボットからデータを取得することで，そのデータを活用した様々なサービスを期待することができる．そこで，本提案で開発した汎用ユニット(以下，「RSNPユニット」と記載)を，多種多様なロボットやデバイスに外付けで接続することで，取得したデータをRSNP(Robot Serivice Networking Protocol)[2]通信でインターネット経由でサーバにアップロードして蓄積し，Webブラウザ等のGUI上で各ロボットの状態を管理，監視することができる．以下の図のようにRSNPユニットをロボットに接続して使用することが可能である．  
 <img src="https://user-images.githubusercontent.com/44587055/63586989-c2505680-c5dd-11e9-8ae9-64afd83e85de.png" width=45%>  
 
-**※現状，RSNPユニットは，産業技術大学院大学(品川)サーバの次のエンドポイントへ接続します．**  
-http://robots.aiit.ac.jp:8080/UpdateNotificationState/services  
+**※現状，RSNPユニットは，以下のエンドポイントへ接続します．**  
+http://robo-lab.mydns.jp:8080/EnqueteRobots2017/services  
 
 <div style="page-break-before:always"></div>  
   
@@ -234,9 +217,3 @@ http://james.apache.org/mime4j/
 http://commons.apache.org/proper/commons-codec/
 - commons-logging-1.1.1.jar
 http://commons.apache.org/proper/commons-logging/
-
-## 参考文献  
-[1] NEDO "2035年までのロボット産業の将来市場予測"，http://www.nedo.go.jp/content/100080673.pdf, 最終閲覧日2019年8月20日  
-[2] ロボットサービスイニシアチブ，Robot Service Network Protocol2.3 仕様書 第1.0版，2010  
-[3] OpenRTM-aist, https://openrtm.org/openrtm/ja, 最終閲覧日2019年8月20日  
-[4] ROS Wiki, http://wiki.ros.org/ja, 最終閲覧日2019年8月20日  
